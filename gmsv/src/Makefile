@@ -13,7 +13,7 @@ export SHELL=/bin/sh
 
 INCFLAGS=-Iinclude
 
-CFLAGS=-w -O3 $(INCFLAGS)
+CFLAGS=-w -O3 -D_ANGEL_SUMMON -D_RACEMAN -fcommon --allow-multiple-definition $(INCFLAGS)
 
 PROG=../gmsv
 

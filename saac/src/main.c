@@ -108,6 +108,14 @@ struct sockaddr_in localaddr;       /* bind 允月失玉伊旦 */
 
 struct connection *con;        /* 戊生弁扑亦件     */
 
+// initMissionTable and initRankTable declarations
+#ifdef _ANGEL_SUMMON
+static int initMissionTable(void);
+#endif
+#ifdef _RACEMAN
+static int initRankTable(void);
+#endif
+
 static int mb_finder=0;              /* mb及坞五毛腹绸允月凶户及
                                腹绸玄永皿及匏  筏盛迕 */
 // WON FIX
