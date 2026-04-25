@@ -16,8 +16,8 @@
 //#define _RUNNING_KEY  "11111111"  // (可开放)( 石器 6.0 )
 // #define _DEFAULT_PKEY "ttttttttt"   // (可开放)( 石器 6.0 )
 // #define _RUNNING_KEY  "20041215"    // (可开放)( 石器 6.0 )
-#define _DEFAULT_PKEY "upupupupp"   // (可开放)( 石器 6.0 )
-#define _RUNNING_KEY  "20060427"    // (可开放)( 石器 6.0 )
+#define _DEFAULT_PKEY "www.longzoro.com"   // (可开放)( 石器 6.0 )
+#define _RUNNING_KEY  "www.longzoro.com"    // (可开放)( 石器 6.0 )
 
 #define _VERSION_20010911           // (可开放) 9.11 编码修改 
 
