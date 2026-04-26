@@ -7588,7 +7588,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 					if(CHAR_getWorkInt(index,CHAR_WORKSTREETVENDOR) != 1) continue;
 					// 有人在摆摊
 					else{
-						CHAR_talkToCli(charaindex,-1,"你所站的位置已经有人在摆\摊了",CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex,-1,"你所站的位置已经有人在摆摊了",CHAR_COLORYELLOW);
 						return;
 					}
 				}

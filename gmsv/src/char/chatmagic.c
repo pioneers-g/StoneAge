@@ -590,10 +590,10 @@ void CHAR_CHAT_DEBUG_additem( int charindex , char *message )
 						ITEM_getInt( itemindex, ITEM_ID)
 	
 				);
-				snprintf( msgbuf, sizeof( msgbuf), "[GM]%s给你制作%s成功\。",
+				snprintf( msgbuf, sizeof( msgbuf), "[GM]%s给你制作%s成功。",
 											CHAR_getChar( charindex, CHAR_NAME ),ITEM_getChar( itemindex, ITEM_NAME));
 				CHAR_talkToCli( j, -1,msgbuf, CHAR_COLORYELLOW);
-				snprintf( msgbuf, sizeof( msgbuf), "成功为%s制作 %s\。",
+				snprintf( msgbuf, sizeof( msgbuf), "成功为%s制作 %s。",
 											CHAR_getChar( j, CHAR_NAME ),ITEM_getChar( itemindex, ITEM_NAME));
 				CHAR_talkToCli( charindex, -1,msgbuf, CHAR_COLORYELLOW);
 			}else{
@@ -637,7 +637,7 @@ void CHAR_CHAT_DEBUG_additem( int charindex , char *message )
 					ITEM_getInt( itemindex, ITEM_ID)
 
 			);
-			snprintf( msgbuf, sizeof( msgbuf), "制作%s成功\。",
+			snprintf( msgbuf, sizeof( msgbuf), "制作%s成功。",
 										ITEM_getChar( itemindex, ITEM_NAME));
 				CHAR_talkToCli( charindex, -1,msgbuf, CHAR_COLORYELLOW);
 			}else{
