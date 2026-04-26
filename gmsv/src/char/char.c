@@ -4836,10 +4836,10 @@ char* CHAR_appendNameAndTitle( int charaindex, char* src, char* buf,
 		else{
 			int titleindex = CHAR_getInt(charaindex,CHAR_INDEXOFEQTITLE);
 			if( titleindex == -1 )
-				snprintf( buf,buflen, "%s：%s",
+				snprintf( buf,buflen, "%s:%s",
 						  CHAR_getChar(charaindex,CHAR_NAME), src );
 			else
-				snprintf( buf,buflen, "%s(%s)：%s",
+				snprintf( buf,buflen, "%s(%s):%s",
 						  CHAR_getChar(charaindex,CHAR_NAME),
 						  TITLE_makeTitleStatusString(charaindex,
 													  titleindex), src );
