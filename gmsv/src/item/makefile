@@ -1,6 +1,6 @@
 INCFLAGS=-I. -I../include
 
-CFLAGS=-w -O3 $(INCFLAGS)
+CFLAGS=-w -O3 -finput-charset=utf-8 -fexec-charset=gbk $(INCFLAGS)
 
 PROG=libitem.a
 

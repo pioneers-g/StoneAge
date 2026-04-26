@@ -243,7 +243,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 					ITEM_getChar( itemindex, ITEM_NAME),
 					ITEM_getInt( itemindex, ITEM_ID)
 				);
-				snprintf( msgbuf, sizeof( msgbuf), "制作%s成功\。",
+				snprintf( msgbuf, sizeof( msgbuf), "制作%s成功。",
 					ITEM_getChar( itemindex, ITEM_NAME));
 				CHAR_talkToCli( talkerindex, -1,msgbuf, CHAR_COLORWHITE);
 			}
@@ -279,7 +279,7 @@ void NPC_FmLetterWindowTalked( int meindex, int talkerindex,
 					ITEM_getChar( itemindex, ITEM_NAME),
 					ITEM_getInt( itemindex, ITEM_ID)
 				);
-				snprintf( msgbuf, sizeof( msgbuf), "制作%s成功\。",
+				snprintf( msgbuf, sizeof( msgbuf), "制作%s成功。",
 					ITEM_getChar( itemindex, ITEM_NAME));
 				CHAR_talkToCli( talkerindex, -1,msgbuf, CHAR_COLORWHITE);
 			}

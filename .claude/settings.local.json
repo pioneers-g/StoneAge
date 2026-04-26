@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(xxd)",
+      "Bash(xargs file *)",
+      "Bash(grep -E '\\\\.\\(c|h\\)$')",
+      "Bash(file -b saac/src/*.c saac/src/*.h)",
+      "Bash(cat)",
+      "Bash(python /tmp/find_cjk.py)",
+      "Bash(python find_cjk.py)",
+      "Bash(file gmsv/data/*)",
+      "Bash(xxd gmsv/data/announce.txt)",
+      "Bash(xxd gmsv/data/magic.txt)",
+      "Bash(xxd gmsv/data/mission.txt)",
+      "Bash(xxd gmsv/data/itematom.txt)",
+      "Bash(file saac/char/*)",
+      "Bash(file saac/db/*)",
+      "Bash(gcc --version)",
+      "Bash(grep -iv \"directory\\\\|empty\\\\|ASCII text\\\\|ISO-8859\\\\|Non-ISO\\\\|data$\\\\|OpenPGP\\\\|C source\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python -c ' *)",
+      "Bash(python check_encoding.py)",
+      "Bash(file saac/wk/*.c saac/wk/*.h)",
+      "Bash(python -c \" with open\\('saac/wk/wk.c', 'rb'\\) as f: data = f.read\\(\\) for i, line in enumerate\\(data.split\\(b'\\\\n'\\), 1\\): if any\\(b >= 0x80 for b in line\\): text = line.decode\\('utf-8'\\) print\\(f'L{i}\\(UTF-8\\): {text[:120]}'\\) \")",
+      "Bash(recode gb18030..utf8 saac/wk/TCPIP.c saac/wk/version.h)",
+      "mcp__ghidra-mcp__read_memory",
+      "mcp__ghidra-mcp__disassemble_function",
+      "mcp__ghidra-mcp__decompile_function",
+      "Bash(mkdir -p /d/code/TokyohotDll)",
+      "Bash(cp -r /d/code/StoneAge/tokyohot/* /d/code/TokyohotDll/)"
+    ]
+  }
+}

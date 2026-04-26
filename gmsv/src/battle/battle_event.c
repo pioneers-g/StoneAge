@@ -1562,7 +1562,7 @@ static int BATTLE_GuardianCheck( int attackindex, int defindex )
 #endif
 	){
 		//snprintf( szBuffer, sizeof(szBuffer),
-		//	"(%s)想要守住(%s)可是没成功\。",
+		//	"(%s)想要守住(%s)可是没成功。",
 		//	CHAR_getUseName( GuardianIndex ),
 		//	CHAR_getUseName( defindex )
 		//);
@@ -1575,7 +1575,7 @@ static int BATTLE_GuardianCheck( int attackindex, int defindex )
 		CHAR_getItemIndex( attackindex, CHAR_ARM ) ) == TRUE
 	){
 		//snprintf( szBuffer, sizeof(szBuffer),
-		//	"(%s)想要守住(%s)可是没成功\。",
+		//	"(%s)想要守住(%s)可是没成功。",
 		//	CHAR_getUseName( GuardianIndex ),
 		//	CHAR_getUseName( defindex )
 		//);

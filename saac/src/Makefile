@@ -8,7 +8,7 @@
 CC = gcc
 
 #����mysql���Ͽ⹦�ܯ�
-CFLAGS=-w -O3 -fcommon --allow-multiple-definition $(INCFLAGS)
+CFLAGS=-w -O3 -fcommon --allow-multiple-definition -finput-charset=utf-8 -fexec-charset=gbk $(INCFLAGS)
 MYSQL=-L /usr/lib/mysql/ -lmysqlclient -lz 
 
 TOP=../..
