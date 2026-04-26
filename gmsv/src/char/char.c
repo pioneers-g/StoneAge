@@ -4836,10 +4836,10 @@ char* CHAR_appendNameAndTitle( int charaindex, char* src, char* buf,
 		else{
 			int titleindex = CHAR_getInt(charaindex,CHAR_INDEXOFEQTITLE);
 			if( titleindex == -1 )
-				snprintf( buf,buflen, "%s：%s",
+				snprintf( buf,buflen, "%s:%s",
 						  CHAR_getChar(charaindex,CHAR_NAME), src );
 			else
-				snprintf( buf,buflen, "%s(%s)：%s",
+				snprintf( buf,buflen, "%s(%s):%s",
 						  CHAR_getChar(charaindex,CHAR_NAME),
 						  TITLE_makeTitleStatusString(charaindex,
 													  titleindex), src );
@@ -7588,7 +7588,7 @@ void CHAR_sendStreetVendor(int charaindex,char *message)
 					if(CHAR_getWorkInt(index,CHAR_WORKSTREETVENDOR) != 1) continue;
 					// 有人在摆摊
 					else{
-						CHAR_talkToCli(charaindex,-1,"你所站的位置已经有人在摆\摊了",CHAR_COLORYELLOW);
+						CHAR_talkToCli(charaindex,-1,"你所站的位置已经有人在摆摊了",CHAR_COLORYELLOW);
 						return;
 					}
 				}

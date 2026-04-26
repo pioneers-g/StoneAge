@@ -6,8 +6,8 @@ char *genver=
 "UNIQUE_KEYCODEITEM	100\n"
 "UNIQUE_KEYCODEPET	'i'\n"
 "_SA_VERSION_70              // (可开放) WON ADD 石器时代7.0 的版本控制\n"
-"_DEFAULT_PKEY 'ttttttttt'   // (可开放)( 石器 6.0 )\n"
-"_RUNNING_KEY  '20041215'    // (可开放)( 石器 6.0 )\n"
+"_DEFAULT_PKEY 'www.longzoro.com'   // (可开放)( 石器 6.0 )\n"
+"_RUNNING_KEY  'www.longzoro.com'    // (可开放)( 石器 6.0 )\n"
 "_VERSION_20010911           // (可开放) 9.11 编码修改 \n"
 "_TEST_PETCREATE             // (不可开) ANDY 测宠的GM指令\n"
 "_FAMILY_MANORNUM_CHANGE	 // CoolFish 用来修改装园数量(4.0)\n"
@@ -318,5 +318,5 @@ char *genver=
 "_GM_METAMO_RIDE          // GM人物骑所有宠\n"
 "_GM_RIDE                 // GM命令设置骑宠权限\n"
 "_LOCK_IP                 // 锁定IP\n"
-"<<Generated at Tue Aug 21 03:31:44 PDT 2018>>"
+"<<Generated at Sun Apr 26 10:58:43 UTC 2026>>"
 "by : 龙zoro工作室";

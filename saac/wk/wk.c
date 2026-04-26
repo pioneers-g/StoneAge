@@ -49,7 +49,7 @@ int WGSPort = -1;
 int zap=0;
 int additional_process=0;
 
-#ifdef _ADD_AC_IP				 // WON ADD ¼ÓAC_IPÖÁÍ¨Ñ¶Ð­¶¨ÖÐ
+#ifdef _ADD_AC_IP				 // WON ADD ï¿½ï¿½AC_IPï¿½ï¿½Í¨Ñ¶Ð­ï¿½ï¿½ï¿½ï¿½
 char AC_IP[20];
 #endif
 
@@ -100,7 +100,7 @@ static int checkCSconnect( void)
 	}
 	if( csd <= 0 ){
 		char buf[256];
-		sprintf( buf, "ÎÞ·¨Á¬½Óµ½ %s:%d !\n", WGSAddress, WGSPort);
+		sprintf( buf, "ï¿½Þ·ï¿½ï¿½ï¿½ï¿½Óµï¿½ %s:%d !\n", WGSAddress, WGSPort);
 		Log( buf);
 		return -1;
 	}
@@ -152,9 +152,9 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 		switch (*flag) {
 		case '1': // Login
 		
-#ifdef _FIX_MESSAGE                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ		
+#ifdef _FIX_MESSAGE                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		
 
-#ifdef _ADD_AC_IP				 // WON ADD ¼ÓAC_IPÖÁÍ¨Ñ¶Ð­¶¨ÖÐ
+#ifdef _ADD_AC_IP				 // WON ADD ï¿½ï¿½AC_IPï¿½ï¿½Í¨Ñ¶Ð­ï¿½ï¿½ï¿½ï¿½
 			sprintf(buffer,"&;5;6;%s;%s;0;%s;",idbuf,pasbuf, AC_IP);
 #else
 			sprintf(buffer,"&;5;6;%s;%s;0;",idbuf,pasbuf);
@@ -168,12 +168,12 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			break;
 		case '4': // Delete
 
-#ifdef _FIX_MESSAGE                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ		
+#ifdef _FIX_MESSAGE                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		
 
-#ifdef _ADD_AC_IP				 // WON ADD ¼ÓAC_IPÖÁÍ¨Ñ¶Ð­¶¨ÖÐ
-			sprintf(buffer,"É¾³ýÈËÎï£º%s %s %s\n",idbuf,pasbuf, AC_IP);
+#ifdef _ADD_AC_IP				 // WON ADD ï¿½ï¿½AC_IPï¿½ï¿½Í¨Ñ¶Ð­ï¿½ï¿½ï¿½ï¿½
+			sprintf(buffer,"É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï£º%s %s %s\n",idbuf,pasbuf, AC_IP);
 #else
-			sprintf(buffer,"É¾³ýÈËÎï£º%s %s\n",idbuf,pasbuf);
+			sprintf(buffer,"É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï£º%s %s\n",idbuf,pasbuf);
 #endif
 
 #else		
@@ -187,12 +187,12 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 		case '5': // recheck WGS deadline
 #endif
 
-#ifdef _FIX_MESSAGE                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ		
+#ifdef _FIX_MESSAGE                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		
 
-#ifdef _ADD_AC_IP				 // WON ADD ¼ÓAC_IPÖÁÍ¨Ñ¶Ð­¶¨ÖÐ
-			sprintf(buffer,"½øÈëÓÎÏ·£º%s %s %s\n",idbuf,pasbuf, AC_IP);
+#ifdef _ADD_AC_IP				 // WON ADD ï¿½ï¿½AC_IPï¿½ï¿½Í¨Ñ¶Ð­ï¿½ï¿½ï¿½ï¿½
+			sprintf(buffer,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½%s %s %s\n",idbuf,pasbuf, AC_IP);
 #else
-			sprintf(buffer,"½øÈëÓÎÏ·£º%s %s\n",idbuf,pasbuf);
+			sprintf(buffer,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½%s %s\n",idbuf,pasbuf);
 #endif
 
 #else				
@@ -203,12 +203,12 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			break;
 		case '3': // Game End
 		
-#ifdef _FIX_MESSAGE                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ		
+#ifdef _FIX_MESSAGE                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½		
 
-#ifdef _ADD_AC_IP				 // WON ADD ¼ÓAC_IPÖÁÍ¨Ñ¶Ð­¶¨ÖÐ
-			sprintf(buffer,"ÍË³öÓÎÏ·£º%s %s\n",idbuf, AC_IP);
+#ifdef _ADD_AC_IP				 // WON ADD ï¿½ï¿½AC_IPï¿½ï¿½Í¨Ñ¶Ð­ï¿½ï¿½ï¿½ï¿½
+			sprintf(buffer,"ï¿½Ë³ï¿½ï¿½ï¿½Ï·ï¿½ï¿½%s %s\n",idbuf, AC_IP);
 #else
-			sprintf(buffer,"ÍË³öÓÎÏ·£º%s\n",idbuf);
+			sprintf(buffer,"ï¿½Ë³ï¿½ï¿½ï¿½Ï·ï¿½ï¿½%s\n",idbuf);
 #endif
 
 #else				
@@ -262,7 +262,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 
 			int payType;
 
-#ifndef _FIX_MESSAGE                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ	
+#ifndef _FIX_MESSAGE                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
 			if (atoi(ptr+1)!=baka){
 				char buff1[256];
 				sprintf( buff1, "%d != %d\n", atoi(ptr+1), baka);
@@ -280,23 +280,23 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			}
 			
 			if( strcmp( strtok(0,";"), idbuf)) {  // get PlayerAccount
-				//Log(" »Ø´«ÕÊºÅ²»·û! ");
+				//Log(" ï¿½Ø´ï¿½ï¿½ÊºÅ²ï¿½ï¿½ï¿½! ");
 				//return(-106);
 			}
 
 			switch( payType) {
-			case 1: // °üÔÂÖÆ
+			case 1: // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				strcpy( deadline ,"0");
-				Log(" °üÔÂ ");
+				Log(" ï¿½ï¿½ï¿½ï¿½ ");
 				break;
-			case 2: // Ê±¶ÎÖÆ
+			case 2: // Ê±ï¿½ï¿½ï¿½ï¿½
 				//strtok(0,";"); // get PlayerAccount
 				strcpy( deadline ,strtok(0,";"));
-				Log(" Ê±¶Î ");
+				Log(" Ê±ï¿½ï¿½ ");
 				break;
 			case 0:
 				strcpy( deadline ,"0");
-				Log(" ½áÊø ");
+				Log(" ï¿½ï¿½ï¿½ï¿½ ");
 				break;
 			}
 
@@ -304,16 +304,16 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 
 			switch (*flag) {
 			case '1': // List
-				Log("ÓÃ»§µÇÂ½\n");
+				Log("ï¿½Ã»ï¿½ï¿½ï¿½Â½\n");
 				break;
 			case '4': // Delete
-				Log("É¾³ýÈËÎï\n");
+				Log("É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
 				break;
 			case '2':
-				Log("½øÈëÓÎÏ·\n");
+				Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·\n");
 				break;
 			case '3':
-				Log("ÍË³öÓÎÏ·\n");	
+				Log("ï¿½Ë³ï¿½ï¿½ï¿½Ï·\n");	
 				break;
 #ifdef _TIMEOUTKICK
 			case '5':
@@ -327,8 +327,8 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 			return(0); // Authencation passed
 		}
 
-#ifdef _FIX_MESSAGE                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ
-		// »Ø´«´íÎóÂë
+#ifdef _FIX_MESSAGE                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		else if (ptr[0]=='E'){
 			char err_code[10];
 			int i, err_num=0, login_star=-1;
@@ -337,7 +337,7 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 				strtok(0,";"); // Get 1
 			if( *flag != '1' && *flag != '4') {
 				if( strcmp( strtok(0,";"), idbuf)) {  // get PlayerAccount
-					//Log(" »Ø´«ÕÊºÅ²»·û! ");
+					//Log(" ï¿½Ø´ï¿½ï¿½ÊºÅ²ï¿½ï¿½ï¿½! ");
 					//return(-106);
 				}
 			}
@@ -352,17 +352,17 @@ static int doKN( char *id , char *pas , char *flag , char *process)
 
 			err_num=atoi(err_code);
 
-			if( err_num == 203 ){			// 203 ²»Í¬ÐÇÏµ
+			if( err_num == 203 ){			// 203 ï¿½ï¿½Í¬ï¿½ï¿½Ïµ
 					login_star=atoi(ptr+i);
 					Log("203");
-					// »Ø´«ÒÑµÇÈëµÄÐÇÏµ´úÂë
+					// ï¿½Ø´ï¿½ï¿½Ñµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½
 					if(login_star != -1)
 						return(login_star+2030);
 			}
-			else if( err_num == 204 ){		// 204 Í¬ÐÇÏµ	
+			else if( err_num == 204 ){		// 204 Í¬ï¿½ï¿½Ïµ	
 					Log("204");
 					if( *flag == '5')
-						Log(" Ê±¶ÎÎ´µ½ ");
+						Log(" Ê±ï¿½ï¿½Î´ï¿½ï¿½ ");
 					return(204);
 			}else{
 				char msg[256];
@@ -395,7 +395,7 @@ static int createMainSocket( int port )
     sin.sin_addr.s_addr = htonl(INADDR_ANY);
 
     if( (r = bind( s , (struct sockaddr*) &sin , sizeof( sin )) ) <0 ){
-        fprintf(stderr, "°ó¶¨Ê§°Ü" );
+        fprintf(stderr, "ï¿½ï¿½Ê§ï¿½ï¿½" );
         return r;
     }
     listen( s , 5 );
@@ -500,8 +500,8 @@ static void workerMainLoop( void )
     }
 #endif
 
-	//È·ÈÏCS¿ÉÁ¬Ïß
-	if( checkCSconnect() == -1 ) return;
+	//È·ï¿½ï¿½CSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// if( checkCSconnect() == -1 ) return;
 #ifdef _FIX_WORKS
 	if( !LoginToAC() )	//login to ac
 		return;
@@ -545,72 +545,73 @@ while( fgets( linebuf,sizeof(linebuf), fp)){
         if((!process)||(!*process)){
            knret=-7;
         }else{
-       		switch (i_flag) {  //Arminius && ttom
+			knret = 0;
+//        		switch (i_flag) {  //Arminius && ttom
 
-#ifdef _FIX_MESSAGE                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ	
+// #ifdef _FIX_MESSAGE                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½	
 
-#ifdef _TIMEOUTKICK
+// #ifdef _TIMEOUTKICK
 
-			case  1: // List
-#ifdef _AP_CHECK_3_TIMES           // WON ADD ¼õÉÙÈÏÖ¤´ÎÊý
-				knret = 0;
-#else
-				knret = doKN( id, pas, flag, "", deadline);
-#endif
-				break;
-       		case  4: // Delete
-				knret = doKN( id , pas , flag, "" , deadline);
-				break;
-			case  2: // Load
-				knret = doKN( id , pas , flag, "" , deadline);
-				break;
-			case  3: // Save
-				knret = doKN( id , pas, flag, "" , deadline);
-				break;
-			case  5: // recheck WGS
-				knret = doKN( id , pas , flag, "" , deadline);
-				break;
+// 			case  1: // List
+// #ifdef _AP_CHECK_3_TIMES           // WON ADD ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½
+// 				knret = 0;
+// #else
+// 				knret = doKN( id, pas, flag, "", deadline);
+// #endif
+// 				break;
+//        		case  4: // Delete
+// 				knret = doKN( id , pas , flag, "" , deadline);
+// 				break;
+// 			case  2: // Load
+// 				knret = doKN( id , pas , flag, "" , deadline);
+// 				break;
+// 			case  3: // Save
+// 				knret = doKN( id , pas, flag, "" , deadline);
+// 				break;
+// 			case  5: // recheck WGS
+// 				knret = doKN( id , pas , flag, "" , deadline);
+// 				break;
 
-#else
+// #else
 
-			case  1: // List
-#ifdef _AP_CHECK_3_TIMES           // WON ADD ¼õÉÙÈÏÖ¤´ÎÊý
-				knret = 0;
-#else
-				knret = doKN( id, pas, flag, "");
-#endif
-				break;
-       		case  4: // Delete
-				knret = doKN( id , pas , flag, "" );
-				break;
-			case  2: // Load
-				knret = doKN( id , pas , flag, "" );
-				break;
-			case  3: // Save
-					knret = doKN( id , pas, flag, "" );
-				break;
+// 			case  1: // List
+// #ifdef _AP_CHECK_3_TIMES           // WON ADD ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½
+// 				knret = 0;
+// #else
+// 				knret = doKN( id, pas, flag, "");
+// #endif
+// 				break;
+//        		case  4: // Delete
+// 				knret = doKN( id , pas , flag, "" );
+// 				break;
+// 			case  2: // Load
+// 				knret = doKN( id , pas , flag, "" );
+// 				break;
+// 			case  3: // Save
+// 					knret = doKN( id , pas, flag, "" );
+// 				break;
 
-#endif
+// #endif
 
-#else
+// #else
 
 
-       		case  1: // List
-				knret = doKN( id, pas, flag, "");
-				break;
-       		case  4: // Delete
-				knret = doKN( id , pas , flag , "" );
-				break;
-			case  2: // Load
-				knret = doKN( id , pas , flag , process );
-				break;
-			case  3: // Save
-					knret = doKN( id , pas , flag , process );
-				break;
-#endif
-			default:
-				knret = -7;
-			}
+//        		case  1: // List
+// 				knret = doKN( id, pas, flag, "");
+// 				break;
+//        		case  4: // Delete
+// 				knret = doKN( id , pas , flag , "" );
+// 				break;
+// 			case  2: // Load
+// 				knret = doKN( id , pas , flag , process );
+// 				break;
+// 			case  3: // Save
+// 					knret = doKN( id , pas , flag , process );
+// 				break;
+// #endif
+// 			default:
+// 				knret = -7;
+// 			}
 		}
 #ifdef _FIX_WORKS
 		{//andy_add
@@ -645,7 +646,7 @@ while( fgets( linebuf,sizeof(linebuf), fp)){
 #endif
 	//if( AcLogFile != NULL)
 	//	fclose( AcLogFile);
-    Log( "SAACÒÑ¹Ø±Õ. Òì³£ÖÕÖ¹.\n" );
+    Log( "SAACï¿½Ñ¹Ø±ï¿½. ï¿½ì³£ï¿½ï¿½Ö¹.\n" );
 }
 
 static void parseOpt( int argc , char **argv )
@@ -653,7 +654,7 @@ static void parseOpt( int argc , char **argv )
     int c;
     int option_index;
 
-#ifdef _ADD_AC_IP                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ
+#ifdef _ADD_AC_IP                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	memset( AC_IP, -1 , sizeof( AC_IP) );
 #endif
 
@@ -671,13 +672,13 @@ static void parseOpt( int argc , char **argv )
             {"logdir", 1, 0, 'l' },
             {"csaddr", 1, 0, 'a' },
             {"csport", 1, 0, 'c' },
-#ifdef _ADD_AC_IP                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ
+#ifdef _ADD_AC_IP                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			{"acaddr", 1, 0, 'w' },
 #endif
             {0,0,0,0}
         };
 
-#ifdef _FIX_MESSAGE                // WON ADD ÐÞ¸Ä·â°üÄÚÈÝ
+#ifdef _FIX_MESSAGE                // WON ADD ï¿½Þ¸Ä·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         c = getopt_long ( argc, argv, "p:dhl:a:c:w:", long_options, &option_index );
 #else
         c = getopt_long ( argc, argv, "p:dhl:a:c:", long_options, &option_index );
@@ -690,7 +691,7 @@ static void parseOpt( int argc , char **argv )
             if( optarg){
                 snprintf( logdir, sizeof( logdir), "%s", optarg );
             } else{
-                fprintf( stderr , "-l ºóÃæÐèÒªÈÕÂ¼Ãû.\n" );
+                fprintf( stderr , "-l ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Â¼ï¿½ï¿½.\n" );
             }
             break;
         case 'p' :
@@ -701,10 +702,10 @@ static void parseOpt( int argc , char **argv )
             break;
         case 'h':
             fprintf( stderr,
-                     "Ê¹ÓÃ·½·¨: acwk [-d|--µ÷ÊÔÄ£ÊÔ] [-p ¶Ë¿Ú|--¶Ë¿Ú ¶Ë¿Ú] [-h|--°ïÖú] [-l ÈÕÖ¾ÈÕÂ¼]\n"
-                     "            [-a CSµØÖ·] [-c CS¶Ë¿Ú]\n"
-                     "Ä¬ÈÏµ÷ÊÔÄ£ÊÔÎª0.\n"
-                     "\nCopyright 2003 Áúzoro¹¤×÷ÊÒ / Longzoro system supply\n"
+                     "Ê¹ï¿½Ã·ï¿½ï¿½ï¿½: acwk [-d|--ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½] [-p ï¿½Ë¿ï¿½|--ï¿½Ë¿ï¿½ ï¿½Ë¿ï¿½] [-h|--ï¿½ï¿½ï¿½ï¿½] [-l ï¿½ï¿½Ö¾ï¿½ï¿½Â¼]\n"
+                     "            [-a CSï¿½ï¿½Ö·] [-c CSï¿½Ë¿ï¿½]\n"
+                     "Ä¬ï¿½Ïµï¿½ï¿½ï¿½Ä£ï¿½ï¿½Îª0.\n"
+                     "\nCopyright 2003 ï¿½ï¿½zoroï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ / Longzoro system supply\n"
                      );
             exit(0);
             break;
@@ -716,7 +717,7 @@ static void parseOpt( int argc , char **argv )
             WGSPort = atoi( optarg );
             break;
         // Spock end
-#ifdef _ADD_AC_IP				 // WON ADD ¼ÓAC_IPÖÁÍ¨Ñ¶Ð­¶¨ÖÐ
+#ifdef _ADD_AC_IP				 // WON ADD ï¿½ï¿½AC_IPï¿½ï¿½Í¨Ñ¶Ð­ï¿½ï¿½ï¿½ï¿½
 		case 'w':
 			strcpy( AC_IP, optarg ); 
 			Log( AC_IP );
@@ -741,15 +742,15 @@ int main( int argc , char ** argv )
 #endif
     // Spock 2000/12/5
     if( strlen(WGSAddress) < 8 || strlen(WGSAddress) > 16 ){
-    	fprintf( stderr , "ÄãÖ¸¶¨CSµÄIPµØÖ·²»ÕýÈ·.\n");
+    	fprintf( stderr , "ï¿½ï¿½Ö¸ï¿½ï¿½CSï¿½ï¿½IPï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½È·.\n");
     	exit(1);
     }
     if( WGSPort < 0 ){
-    	fprintf( stderr , "ÄãÖ¸¶¨CSµÄ¶Ë¿Ú²»ÕýÈ·.\n");
+    	fprintf( stderr , "ï¿½ï¿½Ö¸ï¿½ï¿½CSï¿½Ä¶Ë¿Ú²ï¿½ï¿½ï¿½È·.\n");
     	exit(1);
     }
 #ifndef _FIX_WORKS    	
-    fprintf( stderr , "\n¶Ë¿Ú:[%d] µ÷ÊÔÄ£Ê½:[%d] CSµØÖ·:[%s] CS¶Ë¿Ú:[%d]\n" ,
+    fprintf( stderr , "\nï¿½Ë¿ï¿½:[%d] ï¿½ï¿½ï¿½ï¿½Ä£Ê½:[%d] CSï¿½ï¿½Ö·:[%s] CSï¿½Ë¿ï¿½:[%d]\n" ,
     	port , debug , WGSAddress , WGSPort );
     // Spock end
     if( (mainsockfd = createMainSocket( port ))<0){
@@ -758,7 +759,7 @@ int main( int argc , char ** argv )
         return 1;
     }
 #else
-    fprintf( stderr , "\nµ÷ÊÔÄ£Ê½:[%d] CSµØÖ·:[%s] CS¶Ë¿Ú:[%d]\n" ,
+    fprintf( stderr , "\nï¿½ï¿½ï¿½ï¿½Ä£Ê½:[%d] CSï¿½ï¿½Ö·:[%s] CSï¿½Ë¿ï¿½:[%d]\n" ,
     	debug , WGSAddress , WGSPort );
 #endif
 // Nuke +1
@@ -815,7 +816,7 @@ void Log( char *msg )
 #ifdef _FIX_WORKS
 int LoginToAC()
 {
-	Log( "\nÁ¬½Ó SAAC ");
+	Log( "\nï¿½ï¿½ï¿½ï¿½ SAAC ");
 	usleep( 80*10000);
 	Log( ".");
 	afd = TCPconnect( WGSAddress, ACPORT);
@@ -823,7 +824,7 @@ int LoginToAC()
 		close( afd);
 		return 0; 
 	}
-	Log( ".³É¹¦\n");
+	Log( ".ï¿½É¹ï¿½\n");
 	usleep( 40*10000);
 	return 1;
 }

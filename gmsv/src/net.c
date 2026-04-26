@@ -2295,7 +2295,7 @@ SINGLETHREAD BOOL netloop_faster( void )
                 char mess[1024] = "A";// Nuke +2 Errormessage
 				if( bNewServer )
 #ifdef _SA_VERSION_70         // WON ADD 石器时代7.0 的版本控制
-					mess[0]='F';	  // 7.0
+					mess[0]='L';	  // 7.0
 #endif
 				else
 					mess[0]='$';

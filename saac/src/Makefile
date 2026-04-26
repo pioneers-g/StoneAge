@@ -7,8 +7,8 @@
 
 CC = gcc
 
-#加入mysql资料库功能
-CFLAGS=-w -O3 $(INCFLAGS)
+#锟斤拷锟斤拷mysql锟斤拷锟较库功锟杰拷
+CFLAGS=-w -O3 -fcommon --allow-multiple-definition -finput-charset=utf-8 -fexec-charset=gbk $(INCFLAGS)
 MYSQL=-L /usr/lib/mysql/ -lmysqlclient -lz 
 
 TOP=../..
@@ -24,7 +24,7 @@ RPCSRC = saacproto_serv.c saacproto_util.c saacproto_work.c saacproto_lserver.c 
 RPCINCLUDE = saacproto_serv.h saacproto_util.h saacproto_work.h saacproto_lserver.h saacproto_oac.h deathcontend.h
 RPCNOUSE = saacproto_cli.c saacproto_cli.h
 
-#加入mysql资料库功能
+#锟斤拷锟斤拷mysql锟斤拷锟较库功锟杰锟斤拷
 SRC = main.c recv.c util.c char.c db.c mail.c acfamily.c defend.c lock.c tcpip_util.c chatroom.c auction.c sasql.c $(RPCSRC)
 #SRC = main.c recv.c util.c char.c db.c mail.c acfamily.c defend.c lock.c tcpip_util.c chatroom.c auction.c $(RPCSRC)
 
