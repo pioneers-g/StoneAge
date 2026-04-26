@@ -2712,7 +2712,7 @@ void FAMILY_LeaderFunc( int fd, int meindex, char *message )
 		ITEM_setWorkInt( itemindex, ITEM_WORKOBJINDEX,-1);
 		ITEM_setWorkInt( itemindex, ITEM_WORKCHARAINDEX, meindex);
 		CHAR_sendItemDataOne( meindex, emptyitemindexinchara);
-		snprintf( buf, sizeof( buf), "制作%s成功\。",
+		snprintf( buf, sizeof( buf), "制作%s成功。",
 			ITEM_getChar( itemindex, ITEM_NAME));
 		CHAR_talkToCli( meindex, -1, buf, CHAR_COLORWHITE);
 	}
