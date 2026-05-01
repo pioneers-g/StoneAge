@@ -1367,6 +1367,9 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 	int     leaklevel;
 	int		itemcolor = 0;
 	int 	flg;
+#ifdef _SA_VERSION_80
+	char	flgstr[32];  // SA 8.0: flg as string
+#endif
 	char	INGNAME0[4];
 	char	INGNAME1[4];
 
@@ -1470,6 +1473,11 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 	}
 #endif
 
+#ifdef _SA_VERSION_80
+	// SA 8.0: Convert flg to string for client compatibility
+	snprintf(flgstr, sizeof(flgstr), "%d", flg);
+#endif
+
 #ifdef _ALCHEMIST
 	strcpy( INGNAME0, ITEM_getChar( itemindex, ITEM_INGNAME0) );
 	strcpy( INGNAME1, ITEM_getChar( itemindex, ITEM_INGNAME1) );
@@ -1493,6 +1501,25 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 			snprintf(buff1, sizeof(buff1), "%d%%", (int)((crushe*100)/maxcrushe) );
 		}
 
+#ifdef _SA_VERSION_80
+		// SA 8.0: 15 fields format
+		// Fields: name|paramshow|color|effect|IMAGENO|fieldtype|level|target|0|0|flg|damage||pilenums|equip_bitmap
+		snprintf(ITEM_itemStatusStringBuffer,
+				 sizeof( ITEM_itemStatusStringBuffer),
+				 "%s|%s|%d|%s|%d|%d|%d|%d|0|0|%s|%s||%d|%s",
+				 escapename, paramshow,
+				 itemcolor, escapeeffectstring ,
+				 ITEM_getInt( itemindex, ITEM_BASEIMAGENUMBER),
+				 ITEM_getInt( itemindex, ITEM_ABLEUSEFIELD),
+				 ITEM_getInt( itemindex, ITEM_LEVEL),
+				 ITEM_getInt( itemindex, ITEM_TARGET),
+				 flgstr,
+				 buff1,
+				 ITEM_getInt( itemindex, ITEM_USEPILENUMS),
+				 ""  // equipment bitmap placeholder
+				  );
+#else
+		// SA 7.0 and earlier: original format with macro switches
 		snprintf(ITEM_itemStatusStringBuffer,
 				 sizeof( ITEM_itemStatusStringBuffer),
 #ifdef _ITEM_PILENUMS
@@ -1519,6 +1546,25 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 #endif
 #endif
 				  );
+#endif
+#else
+#ifdef _SA_VERSION_80
+		// SA 8.0: 15 fields format (without damage buff1)
+		// Fields: name|paramshow|color|effect|IMAGENO|fieldtype|level|target|0|0|flg|(empty damage)|(empty)|pilenums|equip_bitmap
+		snprintf(ITEM_itemStatusStringBuffer,
+				 sizeof( ITEM_itemStatusStringBuffer),
+				 "%s|%s|%d|%s|%d|%d|%d|%d|0|0|%s||%d|%s",
+				 escapename, paramshow,
+				 itemcolor, escapeeffectstring ,
+				 ITEM_getInt( itemindex, ITEM_BASEIMAGENUMBER),
+				 ITEM_getInt( itemindex, ITEM_ABLEUSEFIELD),
+				 ITEM_getInt( itemindex, ITEM_LEVEL),
+				 ITEM_getInt( itemindex, ITEM_TARGET),
+				 flgstr,
+				 // damage (field 12) is empty - represented by || after flgstr
+				 ITEM_getInt( itemindex, ITEM_USEPILENUMS),
+				 ""  // equipment bitmap placeholder
+				  );
 #else
 		snprintf(ITEM_itemStatusStringBuffer,
 				 sizeof( ITEM_itemStatusStringBuffer),
@@ -1531,6 +1577,7 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 				 ITEM_getInt( itemindex, ITEM_LEVEL),
 				  flg
 				  );
+#endif
 #endif
 	}else {
 #ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 显示物品耐久度
@@ -1546,8 +1593,26 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 			if( maxcrushe <= 0 ) maxcrushe = 1;
 			snprintf(buff1, sizeof(buff1), "%d%%", (int)((crushe*100)/maxcrushe) );
 		}
+#ifdef _SA_VERSION_80
+		// SA 8.0: 15 fields format
 		snprintf(ITEM_itemStatusStringBuffer, sizeof( ITEM_itemStatusStringBuffer),
-				 
+				 "%d|%s|%s|%d|%s|%d|%d|%d|%d|0|0|%s|%s||%d|%s",
+				 haveitemindex,
+				 escapename, paramshow,
+				 itemcolor, escapeeffectstring ,
+				 ITEM_getInt( itemindex, ITEM_BASEIMAGENUMBER),
+				 ITEM_getInt( itemindex, ITEM_ABLEUSEFIELD),
+				 ITEM_getInt( itemindex, ITEM_LEVEL),
+				 ITEM_getInt( itemindex, ITEM_TARGET),
+				 flgstr,
+				 buff1,
+				 ITEM_getInt( itemindex, ITEM_USEPILENUMS),
+				 ""  // equipment bitmap placeholder
+				  );
+#else
+		// SA 7.0 and earlier: original format with macro switches
+		snprintf(ITEM_itemStatusStringBuffer, sizeof( ITEM_itemStatusStringBuffer),
+
 #ifdef _ITEM_PILENUMS
 #ifdef _ALCHEMIST
 				"%d|%s|%s|%d|%s|%d|%d|%d|%d|%d|%s|%d|%s",
@@ -1573,6 +1638,25 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 #endif
 #endif
 				  );
+#endif
+#else
+#ifdef _SA_VERSION_80
+		// SA 8.0: 15 fields format (without damage)
+		snprintf(ITEM_itemStatusStringBuffer,
+				 sizeof( ITEM_itemStatusStringBuffer),
+				 "%d|%s|%s|%d|%s|%d|%d|%d|%d|0|0|%s||%d|%s",
+				 haveitemindex,
+				 escapename, paramshow,
+				 itemcolor, escapeeffectstring ,
+				 ITEM_getInt( itemindex, ITEM_BASEIMAGENUMBER),
+				 ITEM_getInt( itemindex, ITEM_ABLEUSEFIELD),
+				 ITEM_getInt( itemindex, ITEM_LEVEL),
+				 ITEM_getInt( itemindex, ITEM_TARGET),
+				 flgstr,
+				 // damage (field 12) is empty
+				 ITEM_getInt( itemindex, ITEM_USEPILENUMS),
+				 ""  // equipment bitmap placeholder
+				  );
 #else
 		snprintf(ITEM_itemStatusStringBuffer,
 				 sizeof( ITEM_itemStatusStringBuffer),
@@ -1587,14 +1671,19 @@ char*  ITEM_makeItemStatusString( int haveitemindex, int itemindex )
 				 flg
 				  );
 #endif
-	}
+#endif
 
 	return ITEM_itemStatusStringBuffer;
 }
 
 char*   ITEM_makeItemFalseString( void )
 {
-
+#ifdef _SA_VERSION_80
+	// SA 8.0: 15 empty fields (14 pipes)
+	strcpysafe( ITEM_itemStatusStringBuffer,
+				sizeof( ITEM_itemStatusStringBuffer),
+				"||||||||||||||" );
+#else
 #ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 显示物品耐久度
 	strcpysafe( ITEM_itemStatusStringBuffer,
 				sizeof( ITEM_itemStatusStringBuffer),
@@ -1614,11 +1703,17 @@ char*   ITEM_makeItemFalseString( void )
 				sizeof( ITEM_itemStatusStringBuffer),
 				"||||||||" );
 #endif
+#endif
 	return ITEM_itemStatusStringBuffer;
 }
 
 char*   ITEM_makeItemFalseStringWithNum( int haveitemindex )
 {
+#ifdef _SA_VERSION_80
+	// SA 8.0: 15 fields (slotidx + 14 empty fields)
+	snprintf( ITEM_itemStatusStringBuffer, sizeof( ITEM_itemStatusStringBuffer),
+				"%d||||||||||||||", haveitemindex);
+#else
 #ifdef _ADD_SHOW_ITEMDAMAGE  // WON ADD 显示物品耐久度
 	snprintf(  ITEM_itemStatusStringBuffer, sizeof( ITEM_itemStatusStringBuffer),
 
@@ -1635,6 +1730,7 @@ char*   ITEM_makeItemFalseStringWithNum( int haveitemindex )
 #else
 	snprintf(  ITEM_itemStatusStringBuffer, sizeof( ITEM_itemStatusStringBuffer),
 				"%d|||||||||", haveitemindex);
+#endif
 #endif
 	return ITEM_itemStatusStringBuffer;
 }

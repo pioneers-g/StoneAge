@@ -12,6 +12,7 @@
 #define UNIQUE_KEYCODEPET	"i"
 
 #define _SA_VERSION_70              // (可开放) WON ADD 石器时代7.0 的版本控制
+//#define _SA_VERSION_80              // (可开放) SA 8.0 客户端协议支持
 //#define _DEFAULT_PKEY "Wonwonwon"	// (可开放)( 石器 6.0 )
 //#define _RUNNING_KEY  "11111111"  // (可开放)( 石器 6.0 )
 // #define _DEFAULT_PKEY "ttttttttt"   // (可开放)( 石器 6.0 )
